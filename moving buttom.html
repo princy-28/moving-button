@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Fun Button Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .container {
+            position: relative;
+            height: 300px;
+        }
+        
+        #moveButton {
+            position: absolute;
+            padding: 10px 20px;
+            background-color: lightblue;
+            border: none;
+            cursor: pointer;
+        }
+        
+        #redirectButton {
+            padding: 10px 20px;
+            background-color: lightgreen;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Catch Me If You Can!</h1>
+
+    <div class="container">
+        <button id="moveButton">Catch Me!</button>
+    </div>
+
+    <button id="redirectButton">Go to Another Page</button>
+
+    <script>
+        const moveButton = document.getElementById('moveButton');
+        const container = document.querySelector('.container');
+        const redirectButton = document.getElementById('redirectButton');
+
+        // Function to move the button to random positions
+        moveButton.addEventListener('mouseover', () => {
+            const x = Math.floor(Math.random() * (container.clientWidth - moveButton.clientWidth));
+            const y = Math.floor(Math.random() * (container.clientHeight - moveButton.clientHeight));
+            moveButton.style.left = `${x}px`;
+            moveButton.style.top = `${y}px`;
+        });
+
+        // Redirect to another page when the second button is clicked
+        redirectButton.addEventListener('click', () => {
+            window.location.href = "Aishawrya.html"; // Change this URL to your desired webpage
+        });
+    </script>
+
+</body>
+
+</html>
